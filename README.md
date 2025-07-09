@@ -6,13 +6,13 @@ This project implements a **Sentiment Analysis** model using a **Recurrent Neura
 
 ---
 
-## 📌 Problem Statement
+##  Problem Statement
 
 The objective of this project is to build a **binary classification model** that can predict the **sentiment polarity** of a given movie review — **positive (1)** or **negative (0)**. This is a common task in **opinion mining** and **text classification**.
 
 ---
 
-## 🧠 Technologies Used
+##  Technologies Used
 
 - **Python 3.x**
 - **TensorFlow** and **Keras**
@@ -23,7 +23,7 @@ The objective of this project is to build a **binary classification model** that
 
 ---
 
-## 🗂 Project Structure
+##  Project Structure
 
 ```bash
 imdb-sentiment-analysis/
@@ -39,9 +39,9 @@ imdb-sentiment-analysis/
 ```
 ---
 
-## ⚙️ Setup Instructions
+##  Setup Instructions
 
-### Step 1:Clone the repository
+### Step 1: Clone the repository
 ```bash
 git clone https://github.com/Pooja-Arumugam/imdb-sentiment-analysis.git
 cd imdb-sentiment-analysis
@@ -57,6 +57,69 @@ python main.py
 ### Step 4: Make predictions with pretrained model
 ```bash
 jupyter notebook prediction.ipynb
+```
+
+## Dataset Description
+
+- **Dataset**: IMDb Movie Reviews (via Keras)
+- **Size**: 50,000 reviews (25k training, 25k testing)
+- **Format**: Preprocessed as sequences of word indices
+- **Labels**: `0` = Negative, `1` = Positive
+
+---
+
+## Model Architecture
+
+This project uses the **Keras Sequential API** to build a simple RNN model:
+
+- **Embedding Layer** – Transforms word indices into dense vectors
+- **SimpleRNN Layer** – Learns sequential patterns from the text
+- **Dense Layer with Sigmoid Activation** – Outputs sentiment probability
+
+### Model Summary
+
+```python
+model = Sequential()
+model.add(Embedding(input_dim=10000, output_dim=32))
+model.add(SimpleRNN(units=32))
+model.add(Dense(1, activation='sigmoid'))
+```
+
+## Training Details
+
+- **Loss Function**: `binary_crossentropy`
+- **Optimizer**: `adam`
+- **Metrics**: `accuracy`
+- **Epochs**: 10
+- **Batch Size**: 32
+
+---
+
+## Evaluation Metrics
+
+- **Accuracy**
+- **Confusion Matrix**
+- **Precision**, **Recall**, **F1-Score** _(optional in notebook)_
+
+---
+
+## Notebooks
+
+- `simplernn(dl).ipynb` – End-to-end training and evaluation
+- `prediction.ipynb` – Load model and predict sentiment for custom text
+
+---
+
+## Example Prediction
+
+```python
+# Load and use the model
+model = load_model('simple_rnn_imdb.h5')
+input_text = "The movie was fantastic!"
+```
+# Preprocess and predict...
+``` python
+ Predicted Sentiment: Positive (Probability: 0.93)
 ```
 
 
