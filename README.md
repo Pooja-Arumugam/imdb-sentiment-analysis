@@ -18,7 +18,7 @@ The objective of this project is to build a **binary classification model** that
 - **TensorFlow** and **Keras**
 - **NumPy**
 - **Jupyter Notebook**
-- **HDF5** for model storage
+- **H5** for model storage
 - **pip** for dependency management
 
 ---
