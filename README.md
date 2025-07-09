@@ -36,11 +36,11 @@ imdb-sentiment-analysis/
 ├── simple_rnn_imdb.h5         # Pretrained RNN model saved in HDF5 format
 ├── simplernn(dl).ipynb        # Notebook for model training and evaluation
 └── README.md                  # Project documentation
+```
+---
 
----
----
 ## ⚙️ Setup Instructions
----
+
 ### Step 1:Clone the repository
 ```bash
 git clone https://github.com/Pooja-Arumugam/imdb-sentiment-analysis.git
